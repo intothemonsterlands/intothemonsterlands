@@ -1317,8 +1317,10 @@ goto returnLocation
 
 
 :inventoryCommands
+pause
 
 if "%input%" == "noInput" goto returnLocation
+
 
 if %item_antidote% GTR 0 (
 if "%input%" == "antidote" goto inventory_examine_antidote
@@ -1484,16 +1486,6 @@ if "%input%" == "use potion" goto inventory_use_healthpotion
 if "%input%" == "drink potion" goto inventory_use_healthpotion
 )
 
-if %item_leathermoccasins% GTR 0 (
-if "%input%" == "leather moccasins" goto inventory_examine_leathermoccasins
-if "%input%" == "examine leather moccasins" goto inventory_examine_leathermoccasins
-if "%input%" == "look at leather moccasins" goto inventory_examine_leathermoccasins
-if "%input%" == "use leather moccasins" goto inventory_use_leathermoccasins
-if "%input%" == "moccasins" goto inventory_examine_leathermoccasins
-if "%input%" == "examine moccasins" goto inventory_examine_leathermoccasins
-if "%input%" == "look at moccasins" goto inventory_examine_leathermoccasins
-if "%input%" == "use moccasins" goto inventory_use_leathermoccasins
-)
 
 if %item_pickaxe% GTR 0 (
 if "%input%" == "examine axe" goto inventory_examine_pickaxe
