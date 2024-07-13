@@ -456,7 +456,7 @@ goto returnLocation
 echo.
 echo    [You check your map.]
 if "%location%" == "route1_1" (
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here (peacful field^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
@@ -464,41 +464,41 @@ echo                  ^|   ^|
 echo                  ^+---^+
 echo                  ^| n ^|
 echo                  ^+---^+
-echo                  ^| ~ ^|
+echo                  ^| @ ^|
 echo                  ^+---^+
 echo                  ^| s ^|
 echo                  ^+---^+
 echo                  ^|   ^|
 )
 if "%location%" == "route1_2" (
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here (peaceful forest^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
 echo                  ^+---^+
 echo                  ^| n ^|
 echo                  ^+---^+
-echo                  ^| ~ ^|
+echo                  ^| @ ^|
 echo                  ^+---^+
 echo                  ^| s ^|
 echo                  ^+---^+
 echo                  ^|   ^|
 )
 if "%location%" == "route1_3" (
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here (peaceful forest^).
 echo      s You can go "south" from here.
 echo.
 echo.
 echo.
 echo                  ^+---^+
-echo                  ^| ~ ^|
+echo                  ^| @ ^|
 echo                  ^+---^+
 echo                  ^| s ^|
 echo                  ^+---^+
 echo                  ^|   ^|
 )
 if "%location%" == "hometown_north" (
-echo      @ You are here ^(civilization^).
+echo      @ You are here ^(hometown^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
@@ -513,7 +513,7 @@ echo                  ^+---^+
 echo                   ^| ^|
 )
 if "%location%" == "hometown_south" (
-echo      @ You are here ^(civilization^).
+echo      @ You are here ^(hometown^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
@@ -528,63 +528,63 @@ echo                  ^+---^+
 echo                  ^|   ^|
 )
 if "%location%" == "hometown_potionshop" (
-echo      * You are here ^(inside^).
+echo      @ You are here ^(hometown potion shop^).
 echo        ^(From here you can "leave."^)
 echo.
 echo.
 echo.
 echo                  ^+---^+
-echo                  ^| ^* ^|
+echo                  ^| @ ^|
 echo                  ^+- -^+
 echo.
 echo.
 echo.
 )
 if "%location%" == "hometown_myhouse" (
-echo      * You are here ^(inside^).
+echo      @ You are here ^(your house^).
 echo        ^(From here you can "leave."^)
 echo.
 echo.
 echo.
 echo.
 echo                  ^+---^+
-echo                  ^| ^* ^|
+echo                  ^| @ ^|
 echo                  ^+- -^+
 echo.
 echo.
 echo.
 )
 if "%location%" == "hometown_weaponshop" (
-echo      * You are here ^(inside^).
+echo      @ You are here ^(hometown weapon shop^).
 echo        ^(From here you can "leave."^)
 echo.
 echo.
 echo.
 echo.
-echo                  ^+- -^+
-echo                  ^| ^* ^|
 echo                  ^+---^+
+echo                  ^| @ ^|
+echo                  ^+- -^+
 echo.
 echo.
 echo.
 )
 if "%location%" == "hometown_bestfriendshouse" (
-echo      * You are here ^(inside^).
+echo      @ You are here ^(best friend's house^).
 echo        ^(From here you can "leave."^)
 echo.
 echo.
 echo.
 echo.
-echo                  ^+- -^+
-echo                  ^| ^* ^|
 echo                  ^+---^+
+echo                  ^| @ ^|
+echo                  ^+- -^+
 echo.
 echo.
 echo.
 )
 
 if "%location%" == "route2_1" (
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(hometown bridge^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
@@ -592,14 +592,14 @@ echo                  ^|   ^|
 echo                  ^+---^+
 echo                  ^| n ^|
 echo                  ^+---^+
-echo                   ^|~^|
+echo                   ^|@^|
 echo                  ^+---^+
 echo                  ^| s ^|
 echo                  ^+---^+---^+--
 echo                  ^|   ^|   ^|  
 )
 if "%location%" == "route2_2" (
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(swamp^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
@@ -607,7 +607,7 @@ echo                  ^|   ^|
 echo                  ^+---^+
 echo                   ^|n^|
 echo                  ^+---^+
-echo                  ^| ~ ^|
+echo                  ^| @ ^|
 echo                  ^+---^+---^+--
 echo                  ^| s ^|   ^|  
 echo                  ^+---^+---^+--
@@ -619,7 +619,7 @@ echo      ^> Without a source of light, you can see almost nothing.
 echo      ^> "i" to open inventory
 goto returnLocation
 )
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark swampy forest^).
 echo      n You can go "north" from here.
 echo      e You can go "east" from here.
 echo      s You can go "south" from here.
@@ -628,7 +628,7 @@ echo                   ^| ^|
 echo                  ^+---^+
 echo                  ^| n ^|
 echo                  ^+---^+---^+--
-echo                  ^| ~ ^| e ^|  
+echo                  ^| @ ^| e ^|  
 echo                  ^+---^+---^+--
 echo                  ^| s ^|   ^|  
 echo                  ^+---^+   ^+--
@@ -640,7 +640,7 @@ echo      ^> Without a source of light, you can see almost nothing.
 echo      ^> "i" to open inventory
 goto returnLocation
 )
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark swampy forest^).
 echo      s You can go "west from here.
 echo      e You can go "east" from here.
 echo.
@@ -648,7 +648,7 @@ echo               ^| ^|
 echo              ^+---^+
 echo              ^|   ^|
 echo              ^+---^+---^+---^+
-echo              ^| s ^| ~ ^| e ^|
+echo              ^| s ^| @ ^| e ^|
 echo              ^+---^+---^+---^+
 echo              ^|   ^|   ^|   ^|
 echo              ^+---^+   ^+---^+
@@ -660,7 +660,7 @@ echo      ^> Without a source of light, you can see almost nothing.
 echo      ^> "i" to open inventory
 goto returnLocation
 )
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark swampy forest^).
 echo      w You can go "west" from here.
 echo      s You can go "south" from here.
 echo.
@@ -668,14 +668,14 @@ echo             ^|
 echo            --^+
 echo              ^|
 echo            --^+---^+---^+
-echo              ^| w ^| ~ ^|
+echo              ^| w ^| @ ^|
 echo            --^+---^+---^+
 echo              ^|   ^| s ^|
 echo            --^+   ^+---^+
 echo              ^|    ^| ^|
 )
 if "%location%" == "route2_6" (
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(foggy swamp^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
@@ -683,7 +683,7 @@ echo              ^|
 echo            --^+---^+---^+
 echo              ^|   ^| n ^|
 echo            --^+---^+---^+
-echo              ^|   ^| ~ ^|
+echo              ^|   ^| @ ^|
 echo            --^+   ^+---^+
 echo              ^|    ^|s^|
 echo            --^+   ^+---^+
@@ -695,7 +695,7 @@ echo      ^> Without a source of light, you can see almost nothing.
 echo      ^> "i" to open inventory
 goto returnLocation
 )
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark swampy forest^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
@@ -703,7 +703,7 @@ echo                  ^|   ^|
 echo                  ^+---^+---^+--
 echo                  ^| n ^|   ^|  
 echo                  ^+---^+---^+--
-echo                  ^| ~ ^|   ^|  
+echo                  ^| @ ^|   ^|  
 echo                  ^+---^+   ^+--
 echo                  ^| s ^|    ^|  
 echo                  ^+---^+   ^+--
@@ -715,14 +715,14 @@ echo      ^> Without a source of light, you can see almost nothing.
 echo      ^> "i" to open inventory
 goto returnLocation
 )
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark swampy forest^).
 echo      n You can go "north" from here.
 echo.
 echo                  ^|   ^|   ^|  
 echo                  ^+---^+---^+--
 echo                  ^| n ^|   ^|  
 echo                  ^+---^+   ^+--
-echo                  ^| ~ ^|    ^|  
+echo                  ^| @ ^|    ^|  
 echo                  ^+---^+   ^+--
 echo                          ^|  
 echo                          ^+--
@@ -730,7 +730,7 @@ echo                          ^|
 )
 
 if "%location%" == "route3_1" (
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(shaky wooden bridge^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
@@ -738,14 +738,14 @@ echo              ^|   ^|   ^|
 echo            --^+---^+---^+
 echo              ^|   ^| n ^|
 echo            --^+   ^+---^+
-echo              ^|    ^|~^|
+echo              ^|    ^|@^|
 echo            --^+   ^+---^+
 echo                  ^| s ^|
 echo                  ^+---^+
 echo                  ^|   ^|
 )
 if "%location%" == "route3_2" (
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(rocky field^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
@@ -753,21 +753,21 @@ echo              ^|   ^|   ^|
 echo            --^+   ^+---^+
 echo              ^|    ^|n^|
 echo            --^+   ^+---^+
-echo                  ^| ~ ^|
+echo                  ^| @ ^|
 echo                  ^+---^+
 echo                  ^| s ^|
 echo            --^+---^+---^+---^+--
 echo              ^|   ^|   ^|   ^|
 )
 if "%location%" == "route3_quainthut" (
-echo      * You are here ^(inside^).
+echo      @ You are here ^(quaint hut^).
 echo        ^(From here you can "leave" or "enter garden."^)
 echo.
 echo.
 echo                  ^+---^+
 echo                  ^|   ^|
 echo                  ^+- -^+
-echo                  ^| ^* ^|
+echo                  ^| @ ^|
 echo                  ^+- -^+
 echo.
 echo.
@@ -775,21 +775,21 @@ echo.
 )
 
 if "%location%" == "route3_apothecarysgarden" (
-echo      * You are here ^(inside^).
+echo      @ You are here ^(apothecary's garden^).
 echo        ^(From here you can "leave."^)
 echo.
 echo.
 echo.
 echo.
 echo                  ^+---^+
-echo                  ^| ^* ^|
+echo                  ^| @ ^|
 echo                  ^+- -^+
 echo                  ^|   ^|
 echo                  ^+- -^+
 echo.
 )
 if "%location%" == "route3_caveentrance" (
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark fetid cave entrance^).
 echo      n You can go "north" from here.
 echo      s You can go "south" from here.
 echo.
@@ -797,7 +797,7 @@ echo              ^|    ^| ^|
 echo            --^+   ^+---^+
 echo                  ^| n ^|
 echo                  ^+---^+
-echo                  ^| ~ ^|
+echo                  ^| @ ^|
 echo            --^+---^+---^+---^+--
 echo              ^|   ^| s ^|   ^|
 echo            --^+---^+---^+---^+--
@@ -809,7 +809,7 @@ echo      ^> Without a source of light, you can see almost nothing.
 echo      ^> "i" to open inventory
 goto returnLocation
 )
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark fetid cave^).
 echo      n You can go "north" from here.
 echo      w You can go "west" from here.
 echo      e You can go "east from here.
@@ -819,7 +819,7 @@ echo                  ^|   ^|
 echo                  ^+---^+
 echo                  ^| n ^|
 echo            --^+---^+---^+---^+--
-echo              ^| w ^| ~ ^| e ^|
+echo              ^| w ^| @ ^| e ^|
 echo            --^+---^+---^+---^+--
 echo                  ^| s ^|
 echo                  ^+---^+
@@ -831,7 +831,7 @@ echo      ^> Without a source of light, you can see almost nothing.
 echo      ^> "i" to open inventory
 goto returnLocation
 )
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark fetid cave^).
 echo      n You can go "north" from here.
 echo.
 echo.
@@ -839,7 +839,7 @@ echo                  ^|   ^|
 echo            --^+---^+---^+---^+--
 echo              ^|   ^| n ^|   ^|
 echo            --^+---^+---^+---^+--
-echo                  ^| ~ ^|
+echo                  ^| @ ^|
 echo                  ^+---^+
 echo.
 echo.
@@ -851,7 +851,7 @@ echo      ^> Without a source of light, you can see almost nothing.
 echo      ^> "i" to open inventory
 goto returnLocation
 )
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark fetid cave - mining camp^).
 echo      w You can go "west" from here.
 echo      e You can go "east" from here.
 echo.
@@ -860,7 +860,7 @@ echo              ^|   ^|
 echo              ^+---^+
 echo              ^|   ^|
 echo            --^+---^+---^+---^+--
-echo              ^| w ^| ~ ^| e ^|
+echo              ^| w ^| @ ^| e ^|
 echo            --^+---^+---^+---^+--
 echo              ^|   ^|    ^| ^|
 echo              ^+---^+   ^+---^+
@@ -868,21 +868,22 @@ echo                      ^|   ^|
 echo.
 )
 if "%location%" == "route3_tent" (
-echo      * You are here ^(inside^).
+echo      @ You are here ^(mining camp tent^).
 echo        ^(From here you can "leave."^)
 echo.
 echo.
 echo.
 echo                     .
 echo                    / \
-echo                   / ^* \
+echo                   / @ \
 echo                  ^+- -^+
 echo.
 echo.
 echo.
 )
 if "%location%" == "route3_6" (
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(rocky cliff^).
+echo      w You can go "west" from here.
 echo      e You can go "east" from here.
 echo      s You can go "south" from here.
 echo.
@@ -890,7 +891,7 @@ echo              ^|
 echo            --^+
 echo              ^|
 echo            --^+---^+---^+---^+--
-echo              ^|   ^| ~ ^| e ^|
+echo              ^| w ^| @ ^| e ^|
 echo            --^+---^+---^+---^+--
 echo              ^|    ^|s^|
 echo            --^+   ^+---^+
@@ -904,7 +905,7 @@ echo      ^> Without a source of light, you can see almost nothing.
 echo      ^> "i" to open inventory
 goto returnLocation
 )
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark fetid cave^).
 echo      w You can go "west" from here.
 echo      e You can go "east" from here.
 echo.
@@ -913,7 +914,7 @@ echo                      ^|   ^|
 echo                      ^+---^+
 echo                      ^|   ^|
 echo              ^+---^+---^+---^+--
-echo              ^| w ^| ~ ^| e ^|
+echo              ^| w ^| @ ^| e ^|
 echo              ^+---^+---^+---^+--
 echo                      ^|   ^|
 echo                      ^+---^+
@@ -925,7 +926,7 @@ echo      ^> Without a source of light, you can see almost nothing.
 echo      ^> "i" to open inventory
 goto returnLocation
 )
-echo      ~ You are here ^(wilderness^).
+echo      @ You are here ^(dark fetid cave^).
 echo      e You can go "east" from here.
 echo.
 echo.
@@ -933,7 +934,7 @@ echo                          ^|
 echo                          ^+--
 echo                          ^|
 echo                  ^+---^+---^+--
-echo                  ^| ~ ^| e ^|
+echo                  ^| @ ^| e ^|
 echo                  ^+---^+---^+--
 echo                          ^|
 echo                          ^+--
@@ -1008,14 +1009,14 @@ echo      ^> Coming here restores all your missing HP.
 )
 
 if "%location%" == "hometown_north" (
-echo      ^* You see a potion shop.
-echo      ^* You see your house.
+echo      ^> You see a potion shop.
+echo      ^> You see your house.
 echo      ^> The entire village is deserted.
 echo      ^> There is the sense that something bad has happened.
 )
 if "%location%" == "hometown_south" (
-echo      ^* You see a weapon shop.
-echo      ^* You see your best friend's house.
+echo      ^> You see a weapon shop.
+echo      ^> You see your best friend's house.
 echo      ^> The entire village is deserted.
 echo      ^> There is the sense that something bad has happened.
 )
@@ -1118,12 +1119,17 @@ echo      ^> You see a quaint hut.
 )
 
 if "%location%" == "route3_quainthut" (
+if "%apothecary%" == "present" (
 echo      ^> The apothecary from your hometown is here.
 echo      ^> Apparently this is his hut. There are ingredients and paraphernalia about.
+)
 echo      ^> There is access to a garden from here.
 )
 
 if "%location%" == "route3_apothecarysgarden" (
+if "%apothecary%" == "present" (
+echo      ^> The apothecary from your hometown is here.
+)
 echo      ^> It's a lovely place accessible only from the apothecary's quaint hut.
 if "%apothecaryvegetables%" == "present" (
 echo      ^> Some vegetables are ready to take.
@@ -1185,7 +1191,10 @@ echo      ^> There is an antidote.
 )
 )
 if "%location%" == "route3_6" (
-echo      ^> Outside the cave, this cliff drops off steep.
+echo      ^> The thick cave stink is still palpable.
+echo      ^> There is a steep and untraversable cliff to the north.
+echo      ^> The cliff descends abruptly into the sea far below.
+echo      ^> You hear the distant sound of a hundred ocean waves crashing.
 )
 
 if "%location%" == "route3_7" (
@@ -4674,7 +4683,7 @@ echo    [You walk north and exit the village.]
 )
 set location=route1_1
 echo.
-echo  ~ You are in a peaceful field near your hometown.
+echo  @ You are in a peaceful field near your hometown.
 echo      ^> To the north is a peaceful forest.
 echo      ^> To the south is your village.
 if "%firsttime_tile_route1_1%" == "no" (
@@ -4779,7 +4788,7 @@ goto route1_2_randomeventcheck
 :tile_route1_2_continued
 set location=route1_2
 echo.
-echo  ~ You are in a peaceful forest, far north of your village.
+echo  @ You are in a peaceful forest, far north of your village.
 echo      ^> To the north the forest thickens.
 echo      ^> To the south the forest opens up into a peaceful field.
 echo.
@@ -4838,7 +4847,7 @@ if %HP% LSS %maxHP% goto route1_3_restoration
 :route1_3_postrestoration
 set location=route1_3
 echo.
-echo  ~ You are in the deepest part of a peaceful forest, far north of your village.
+echo  @ You are in the deepest part of a peaceful forest, far north of your village.
 echo      ^> The forest extends to the south.
 if "%firsttime_tile_route1_3%" == "no" (
 echo      ^> "h" for help
@@ -5009,7 +5018,8 @@ echo    [You enter the potion shop. The dusty door chimes tinkle solemnly.]
 )
 set location=hometown_potionshop
 echo.
-echo  * You are inside the potion shop in your hometown
+echo  @ You are inside the potion shop in your hometown
+echo      ^> The apothecary is not here.
 echo      ^> From here you can leave.
 if "%firsttime_tile_hometown_potionshop%" == "no" (
 echo      ^> "h" for help
@@ -5501,7 +5511,7 @@ echo    [You walk north, onto a large bridge.]
 )
 set location=route2_1
 echo.
-echo  ~ You are on the large bridge between your village and the monsterlands.
+echo  @ You are on the large bridge between your village and the monsterlands.
 echo      ^> To the north is your village.
 echo      ^> To the south are the monsterlands.
 echo.
@@ -5550,7 +5560,7 @@ echo    [You walk north and exit the dark swampy forest.]
 )
 set location=route2_2
 echo.
-echo  ~ You are in a swamp near your village.
+echo  @ You are in a swamp near your village.
 echo      ^> To the north is a bridge.
 echo      ^> To the south is a dark swampy forest.
 if "%firsttime_tile_route2_2%" == "no" (
@@ -5638,7 +5648,7 @@ echo      ^> The foggy sense of confusion fades away.
 
 set location=route2_3
 echo.
-echo  ~ You are in a dark swampy forest.
+echo  @ You are in a dark swampy forest.
 echo      ^> There is light to the north.
 echo      ^> The forest extends to the east.
 echo      ^> The forest extends to the south.
@@ -5707,7 +5717,7 @@ goto encounter_goblin
 )
 set location=route2_4
 echo.
-echo  ~ You are in a dark swampy forest.
+echo  @ You are in a dark swampy forest.
 echo      ^> The forest extends to the west.
 echo      ^> The forest extends to the east.
 echo.
@@ -5788,7 +5798,7 @@ goto route2_5_randomeventcheck
 )
 set location=route2_5
 echo.
-echo  ~ You are in a dark swampy forest.
+echo  @ You are in a dark swampy forest.
 echo      ^> The forest extends to the west.
 echo      ^> There is light to the south.
 echo.
@@ -5845,7 +5855,7 @@ echo    [You step off the shaky wooden bridge into a foggy swamp.]
 )
 set location=route2_6
 echo.
-echo  ~ You are in a foggy swamp.
+echo  @ You are in a foggy swamp.
 if "%ovalfacedman%" == "present" (
 echo.
 echo      ^> An oval-faced man is waiting here somberly.
@@ -6285,7 +6295,7 @@ echo    [You walk north within the dark swamp forest.]
 )
 set location=route2_7
 echo.
-echo  ~ You are in a dark swampy forest.
+echo  @ You are in a dark swampy forest.
 echo      ^> The forest extends to the north.
 echo      ^> The forest extends to the south and gets very dark.
 echo.
@@ -6337,7 +6347,7 @@ goto encounter_goblinshaman
 
 set location=route2_8
 echo.
-echo  ~ You are in the depths of a very dark swampy forest.
+echo  @ You are in the depths of a very dark swampy forest.
 echo      ^> The forest extends to the north.
 echo.
 echo    [What do you do?]
@@ -6421,7 +6431,7 @@ echo    [You step onto the shaky wooden bridge.]
 
 set location=route3_1
 echo.
-echo  ~ You are on a shaky wooden bridge.
+echo  @ You are on a shaky wooden bridge.
 echo      ^> To the north is a foggy swamp.
 echo      ^> To the south is a rocky field.
 echo.
@@ -6496,7 +6506,7 @@ goto route3_2_randomencountercheck
 :tile_route3_2_continued
 set location=route3_2
 echo.
-echo  ~ You are in a rocky field near a fetid cave.
+echo  @ You are in a rocky field near a fetid cave.
 echo      ^> To the north is a shaky wooden bridge.
 echo      ^> To the south is the entrance to a dark fetid cave.
 echo.
@@ -6590,9 +6600,25 @@ if "%input%" == "go in fetid cave entrance" goto tile_route3_caveentrance
 if "%input%" == "go in dark cave entrance" goto tile_route3_caveentrance
 if "%input%" == "go in dark fetid cave entrance" goto tile_route3_caveentrance
 if "%input%" == "enter cave entrance" goto tile_route3_caveentrance
+if "%input%" == "entrance" goto tile_route3_caveentrance
+if "%input%" == "fetid entrance" goto tile_route3_caveentrance
+if "%input%" == "dark entrance" goto tile_route3_caveentrance
+if "%input%" == "dark fetid entrance" goto tile_route3_caveentrance
+if "%input%" == "go to entrance" goto tile_route3_caveentrance
+if "%input%" == "go to fetid entrance" goto tile_route3_caveentrance
+if "%input%" == "go to dark entrance" goto tile_route3_caveentrance
+if "%input%" == "go to dark fetid entrance" goto tile_route3_caveentrance
+if "%input%" == "go in entrance" goto tile_route3_caveentrance
+if "%input%" == "go in fetid entrance" goto tile_route3_caveentrance
+if "%input%" == "go in dark entrance" goto tile_route3_caveentrance
+if "%input%" == "go in dark fetid entrance" goto tile_route3_caveentrance
+if "%input%" == "enter entrance" goto tile_route3_caveentrance
+if "%input%" == "enter entrance" goto tile_route3_caveentrance
 if "%input%" == "enter fetid cave entrance" goto tile_route3_caveentrance
 if "%input%" == "enter dark cave entrance" goto tile_route3_caveentrance
+if "%input%" == "enter dark entrance" goto tile_route3_caveentrance
 if "%input%" == "enter dark fetid cave entrance" goto tile_route3_caveentrance
+if "%input%" == "enter dark fetid entrance" goto tile_route3_caveentrance
 
 if "%input%" == "m" goto map
 if "%input%" == "map" goto map
@@ -6736,9 +6762,8 @@ set /a item_woodensword=%item_woodensword% - 1
 echo.
 echo      ^> The apothecary brandishes the weapon a few times, pleased. --- :^)
 echo      ^> "Yes!" he says. "Here, take this. For now it's my only one.
+echo      ^> ^+1 antidote
 echo      ^> "I'll make more potions if you bring me ingredients."
-echo.
-echo    [You receive one antidote.]
 set /a luck=%luck% + 1
 set /a items=%items% + 1
 set /a item_antidote=%item_antidote% + 1
@@ -6967,9 +6992,11 @@ if %charisma% GTR 1 (
 if "%apothecarygardenpermission%" == "no" (
 echo.
 echo    [You talk to the apothecary.]
+echo      ^> "You seem trustworthy," he says.
 echo      ^> "Feel free to take the ingredients in my garden.
 echo      ^> "I plant something new every so often."
 set apothecarygardenpermission=yes
+goto returnLocation
 )
 )
 
@@ -7068,7 +7095,7 @@ echo      ^> The apothecary comes with you.
 )
 set location=route3_apothecarysgarden
 echo.
-echo  * You are in the apothecary's garden.
+echo  @ You are in the apothecary's garden.
 echo      ^> The apothecary from your village is here.
 echo      ^> From here you can leave.
 echo.
@@ -7234,7 +7261,7 @@ echo    [You walk north and exit the dark fetid cave.]
 
 set location=route3_caveentrance
 echo.
-echo  ~ You are at the entrance to a dark fetid cave.
+echo  @ You are at the entrance to a dark fetid cave.
 echo      ^> To the north is a rocky field.
 echo      ^> To the south is the inside of the cave.
 echo.
@@ -7387,7 +7414,7 @@ echo    [You walk east within the dark fetid cave.]
 )
 set location=route3_3
 echo.
-echo  ~ You are in a dark fetid cave.
+echo  @ You are in a dark fetid cave.
 echo      ^> There is light to the north.
 echo      ^> The cave extends to the west.
 echo      ^> The cave extends to the east.
@@ -7479,7 +7506,7 @@ goto encounter_giantcentipede
 )
 set location=route3_4
 echo.
-echo  ~ You are in a dark claustrophic cavern in a dark fetid cave.
+echo  @ You are in a dark claustrophic cavern in a dark fetid cave.
 echo      ^> North is the only way from here.
 echo.
 echo    [What do you do?]
@@ -7540,7 +7567,7 @@ echo    [You walk west and enter the dark fetid cave.]
 
 set location=route3_5
 echo.
-echo  ~ You are in an abandoned mining camp, inside a dark fetid cave.
+echo  @ You are in an abandoned mining camp, inside a dark fetid cave.
 echo      ^> The cave extends to the west.
 echo      ^> There is light to the east.
 echo.
@@ -7601,7 +7628,7 @@ if "%input%" == "west" goto tile_route3_3
 if "%input%" == "go west" goto tile_route3_3
 if "%input%" == "east" goto tile_route3_6
 if "%input%" == "go east" goto tile_route3_6
-if "%input%" == "light" goto tile_route3_6
+if "%input%" == "light" goto tile_froute3_6
 if "%input%" == "go to light" goto tile_route3_6
 if "%input%" == "go toward light" goto tile_route3_6
 if "%input%" == "leave" goto tile_route3_6
@@ -7660,7 +7687,7 @@ echo    [You enter the sturdy tent.]
 )
 set location=route3_tent
 echo.
-echo  * You are inside a sturdy tent in a mining camp in a dark fetid cave.
+echo  @ You are inside a sturdy tent in a mining camp in a dark fetid cave.
 echo      ^> From here you can leave.
 if "%firsttime_tile_route3_tent%" == "no" (
 echo      ^> "h" for help
@@ -7753,9 +7780,9 @@ echo    [You walk east and exit the dark fetid cave.]
 )
 set location=route3_6
 echo.
-echo  ~ You are at a rocky cliff near a dark fetid cave.
+echo  @ You are at a rocky cliff near a dark fetid cave.
 echo      ^> To the west is the entrance to a dark fetid cave.
-echo      ^> (Coming soon: To the east is a small, modest bridge.)
+echo      ^> (Coming soon: To the east is a sloping sandy beach.
 echo      ^> (Coming soon: To the south is the bridge to Pineseville.)
 echo.
 echo    [What do you do?]
@@ -7875,7 +7902,7 @@ goto route3_7_randomeventcheck
 :tile_route3_7_continued
 set location=route3_7
 echo.
-echo  ~ You are in a dark fetid cave.
+echo  @ You are in a dark fetid cave.
 echo      ^> To the west there is a small tunnel.
 echo      ^> The cave extends to the east.
 echo.
@@ -7942,7 +7969,7 @@ goto encounter_giganticcentipede
 )
 set location=route3_8
 echo.
-echo  ~ You are in a dark agoraphobic cavern in a dark fetid cave.
+echo  @ You are in a dark agoraphobic cavern in a dark fetid cave.
 echo      ^> East is the only way from here
 echo.
 echo    [What do you do?]
