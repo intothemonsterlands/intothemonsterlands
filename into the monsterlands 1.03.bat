@@ -134,8 +134,12 @@ set ovalfacedman1=incomplete
 set ovalfacedman_loot=not given
 set quainthutcavefly=alive
 set apothecary=present
+set apothecarygardenpermission=no
 set apothecarycutscene1=no
 set givenapothecarysword=no
+set apothecaryvegetables=present
+set apothecaryvegetable=5
+set route3_caveentrance_pickaxe=present
 set route3_4_bugeggs=present
 set route3_5_pickaxe=present
 set route3_tent_ironshinguards=present
@@ -147,6 +151,7 @@ set route3_7_hardhat=present
 set route3_8_bugeggs=present
 set route3_8_ore=present
 set giganticcentipede=alive
+
 
 
 
@@ -290,6 +295,8 @@ if "%location%" == "route2_8" goto tile_route2_8
 if "%location%" == "route3_1" goto tile_route3_1
 if "%location%" == "route3_2" goto tile_route3_2
 if "%location%" == "route3_quainthut" goto tile_route3_quainthut
+if "%location%" == "route3_apothecarysgarden" goto tile_route3_apothecarysgarden
+if "%location%" == "route3_caveentrance" goto tile_route3_caveentrance
 if "%location%" == "route3_3" goto tile_route3_3
 if "%location%" == "route3_4" goto tile_route3_4
 if "%location%" == "route3_5" goto tile_route3_5
@@ -450,73 +457,73 @@ echo.
 echo    [You check your map.]
 if "%location%" == "route1_1" (
 echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
 echo.
 echo                  ^|   ^|
 echo                  ^+---^+
-echo                  ^| N ^|
+echo                  ^| n ^|
 echo                  ^+---^+
 echo                  ^| ~ ^|
 echo                  ^+---^+
-echo                  ^| S ^|
+echo                  ^| s ^|
 echo                  ^+---^+
 echo                  ^|   ^|
 )
 if "%location%" == "route1_2" (
 echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
 echo.
 echo                  ^+---^+
-echo                  ^| N ^|
+echo                  ^| n ^|
 echo                  ^+---^+
 echo                  ^| ~ ^|
 echo                  ^+---^+
-echo                  ^| S ^|
+echo                  ^| s ^|
 echo                  ^+---^+
 echo                  ^|   ^|
 )
 if "%location%" == "route1_3" (
 echo      ~ You are here ^(wilderness^).
-echo      S You can go "south" from here.
+echo      s You can go "south" from here.
 echo.
 echo.
 echo.
 echo                  ^+---^+
 echo                  ^| ~ ^|
 echo                  ^+---^+
-echo                  ^| S ^|
+echo                  ^| s ^|
 echo                  ^+---^+
 echo                  ^|   ^|
 )
 if "%location%" == "hometown_north" (
 echo      @ You are here ^(civilization^).
-echo      N You can go "north" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
 echo.
 echo                  ^|   ^|
 echo                  ^+---^+
-echo                  ^| N ^|
+echo                  ^| n ^|
 echo                  ^+---^+
 echo                  ^| @ ^|
 echo                  ^+---^+
-echo                  ^| S ^|
+echo                  ^| s ^|
 echo                  ^+---^+
 echo                   ^| ^|
 )
 if "%location%" == "hometown_south" (
 echo      @ You are here ^(civilization^).
-echo      N You can go "north" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
 echo.
 echo                  ^|   ^|
 echo                  ^+---^+
-echo                  ^| N ^|
+echo                  ^| n ^|
 echo                  ^+---^+
 echo                  ^| @ ^|
 echo                  ^+---^+
-echo                   ^|S^|
+echo                   ^|s^|
 echo                  ^+---^+
 echo                  ^|   ^|
 )
@@ -578,31 +585,31 @@ echo.
 
 if "%location%" == "route2_1" (
 echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
 echo.
 echo                  ^|   ^|
 echo                  ^+---^+
-echo                  ^| N ^|
+echo                  ^| n ^|
 echo                  ^+---^+
 echo                   ^|~^|
 echo                  ^+---^+
-echo                  ^| S ^|
+echo                  ^| s ^|
 echo                  ^+---^+---^+--
 echo                  ^|   ^|   ^|  
 )
 if "%location%" == "route2_2" (
 echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
 echo.
 echo                  ^|   ^|
 echo                  ^+---^+
-echo                   ^|N^|
+echo                   ^|n^|
 echo                  ^+---^+
 echo                  ^| ~ ^|
 echo                  ^+---^+---^+--
-echo                  ^| S ^|   ^|  
+echo                  ^| s ^|   ^|  
 echo                  ^+---^+---^+--
 echo                  ^|   ^|   ^|  
 )
@@ -613,17 +620,17 @@ echo      ^> "i" to open inventory
 goto returnLocation
 )
 echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo      E You can go "east" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      e You can go "east" from here.
+echo      s You can go "south" from here.
 echo.
 echo                   ^| ^|
 echo                  ^+---^+
-echo                  ^| N ^|
+echo                  ^| n ^|
 echo                  ^+---^+---^+--
-echo                  ^| ~ ^| E ^|  
+echo                  ^| ~ ^| e ^|  
 echo                  ^+---^+---^+--
-echo                  ^| S ^|   ^|  
+echo                  ^| s ^|   ^|  
 echo                  ^+---^+   ^+--
 echo                  ^|   ^|    ^|  
 )
@@ -634,14 +641,14 @@ echo      ^> "i" to open inventory
 goto returnLocation
 )
 echo      ~ You are here ^(wilderness^).
-echo      W You can go "west from here.
-echo      E You can go "east" from here.
+echo      s You can go "west from here.
+echo      e You can go "east" from here.
 echo.
 echo               ^| ^|
 echo              ^+---^+
 echo              ^|   ^|
 echo              ^+---^+---^+---^+
-echo              ^| W ^| ~ ^| E ^|
+echo              ^| s ^| ~ ^| e ^|
 echo              ^+---^+---^+---^+
 echo              ^|   ^|   ^|   ^|
 echo              ^+---^+   ^+---^+
@@ -654,31 +661,31 @@ echo      ^> "i" to open inventory
 goto returnLocation
 )
 echo      ~ You are here ^(wilderness^).
-echo      W You can go "west" from here.
-echo      S You can go "south" from here.
+echo      w You can go "west" from here.
+echo      s You can go "south" from here.
 echo.
 echo             ^|
 echo            --^+
 echo              ^|
 echo            --^+---^+---^+
-echo              ^| W ^| ~ ^|
+echo              ^| w ^| ~ ^|
 echo            --^+---^+---^+
-echo              ^|   ^| S ^|
+echo              ^|   ^| s ^|
 echo            --^+   ^+---^+
 echo              ^|    ^| ^|
 )
 if "%location%" == "route2_6" (
 echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
 echo.
 echo              ^|
 echo            --^+---^+---^+
-echo              ^|   ^| N ^|
+echo              ^|   ^| n ^|
 echo            --^+---^+---^+
 echo              ^|   ^| ~ ^|
 echo            --^+   ^+---^+
-echo              ^|    ^|S^|
+echo              ^|    ^|s^|
 echo            --^+   ^+---^+
 echo                  ^|   ^|
 )
@@ -689,16 +696,16 @@ echo      ^> "i" to open inventory
 goto returnLocation
 )
 echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
 echo.
 echo                  ^|   ^|
 echo                  ^+---^+---^+--
-echo                  ^| N ^|   ^|  
+echo                  ^| n ^|   ^|  
 echo                  ^+---^+---^+--
 echo                  ^| ~ ^|   ^|  
 echo                  ^+---^+   ^+--
-echo                  ^| S ^|    ^|  
+echo                  ^| s ^|    ^|  
 echo                  ^+---^+   ^+--
 echo                          ^|  
 )
@@ -709,11 +716,11 @@ echo      ^> "i" to open inventory
 goto returnLocation
 )
 echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
+echo      n You can go "north" from here.
 echo.
 echo                  ^|   ^|   ^|  
 echo                  ^+---^+---^+--
-echo                  ^| N ^|   ^|  
+echo                  ^| n ^|   ^|  
 echo                  ^+---^+   ^+--
 echo                  ^| ~ ^|    ^|  
 echo                  ^+---^+   ^+--
@@ -724,35 +731,50 @@ echo                          ^|
 
 if "%location%" == "route3_1" (
 echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
 echo.
 echo              ^|   ^|   ^|
 echo            --^+---^+---^+
-echo              ^|   ^| N ^|
+echo              ^|   ^| n ^|
 echo            --^+   ^+---^+
 echo              ^|    ^|~^|
 echo            --^+   ^+---^+
-echo                  ^| S ^|
-echo            --^+---^+---^+---^+--
-echo              ^|   ^|   ^|   ^|
+echo                  ^| s ^|
+echo                  ^+---^+
+echo                  ^|   ^|
 )
 if "%location%" == "route3_2" (
 echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo      S You can go "south" from here.
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
 echo.
 echo              ^|   ^|   ^|
 echo            --^+   ^+---^+
-echo              ^|    ^|N^|
+echo              ^|    ^|n^|
 echo            --^+   ^+---^+
 echo                  ^| ~ ^|
+echo                  ^+---^+
+echo                  ^| s ^|
 echo            --^+---^+---^+---^+--
-echo              ^|   ^| S ^|   ^|
-echo            --^+---^+---^+---^+--
-echo                  ^|   ^|
+echo              ^|   ^|   ^|   ^|
 )
 if "%location%" == "route3_quainthut" (
+echo      * You are here ^(inside^).
+echo        ^(From here you can "leave" or "enter garden."^)
+echo.
+echo.
+echo                  ^+---^+
+echo                  ^|   ^|
+echo                  ^+- -^+
+echo                  ^| ^* ^|
+echo                  ^+- -^+
+echo.
+echo.
+echo.
+)
+
+if "%location%" == "route3_apothecarysgarden" (
 echo      * You are here ^(inside^).
 echo        ^(From here you can "leave."^)
 echo.
@@ -760,10 +782,89 @@ echo.
 echo.
 echo.
 echo                  ^+---^+
-echo                  ^| ^* 
+echo                  ^| ^* ^|
+echo                  ^+- -^+
+echo                  ^|   ^|
+echo                  ^+- -^+
+echo.
+)
+if "%location%" == "route3_caveentrance" (
+echo      ~ You are here ^(wilderness^).
+echo      n You can go "north" from here.
+echo      s You can go "south" from here.
+echo.
+echo              ^|    ^| ^|
+echo            --^+   ^+---^+
+echo                  ^| n ^|
+echo                  ^+---^+
+echo                  ^| ~ ^|
+echo            --^+---^+---^+---^+--
+echo              ^|   ^| s ^|   ^|
+echo            --^+---^+---^+---^+--
+echo                  ^|   ^|
+)
+if "%location%" == "route3_3" (
+if "%light%" == "no" (
+echo      ^> Without a source of light, you can see almost nothing.
+echo      ^> "i" to open inventory
+goto returnLocation
+)
+echo      ~ You are here ^(wilderness^).
+echo      n You can go "north" from here.
+echo      w You can go "west" from here.
+echo      e You can go "east from here.
+echo      s You can go "south" from here.
+echo.
+echo                  ^|   ^|
+echo                  ^+---^+
+echo                  ^| n ^|
+echo            --^+---^+---^+---^+--
+echo              ^| w ^| ~ ^| e ^|
+echo            --^+---^+---^+---^+--
+echo                  ^| s ^|
+echo                  ^+---^+
+echo.
+)
+if "%location%" == "route3_4" (
+if "%light%" == "no" (
+echo      ^> Without a source of light, you can see almost nothing.
+echo      ^> "i" to open inventory
+goto returnLocation
+)
+echo      ~ You are here ^(wilderness^).
+echo      n You can go "north" from here.
+echo.
+echo.
+echo                  ^|   ^|
+echo            --^+---^+---^+---^+--
+echo              ^|   ^| n ^|   ^|
+echo            --^+---^+---^+---^+--
+echo                  ^| ~ ^|
 echo                  ^+---^+
 echo.
 echo.
+echo.
+)
+if "%location%" == "route3_5" (
+if "%light%" == "no" (
+echo      ^> Without a source of light, you can see almost nothing.
+echo      ^> "i" to open inventory
+goto returnLocation
+)
+echo      ~ You are here ^(wilderness^).
+echo      w You can go "west" from here.
+echo      e You can go "east" from here.
+echo.
+echo.
+echo              ^|   ^|
+echo              ^+---^+
+echo              ^|   ^|
+echo            --^+---^+---^+---^+--
+echo              ^| w ^| ~ ^| e ^|
+echo            --^+---^+---^+---^+--
+echo              ^|   ^|    ^| ^|
+echo              ^+---^+   ^+---^+
+echo                      ^|   ^|
 echo.
 )
 if "%location%" == "route3_tent" (
@@ -780,82 +881,18 @@ echo.
 echo.
 echo.
 )
-if "%location%" == "route3_3" (
-if "%light%" == "no" (
-echo      ^> Without a source of light, you can see almost nothing.
-echo      ^> "i" to open inventory
-goto returnLocation
-)
-echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo      W You can go "west" from here.
-echo      E You can go "east from here.
-echo      S You can go "south" from here.
-echo.
-echo              ^|    ^| ^|
-echo            --^+   ^+---^+
-echo                  ^| N ^|
-echo            --^+---^+---^+---^+--
-echo              ^| W ^| ~ ^| E ^|
-echo            --^+---^+---^+---^+--
-echo                  ^| S ^|
-echo                  ^+---^+
-echo.
-)
-if "%location%" == "route3_4" (
-if "%light%" == "no" (
-echo      ^> Without a source of light, you can see almost nothing.
-echo      ^> "i" to open inventory
-goto returnLocation
-)
-echo      ~ You are here ^(wilderness^).
-echo      N You can go "north" from here.
-echo.
-echo.
-echo                  ^|   ^|
-echo            --^+---^+---^+---^+--
-echo              ^|   ^| N ^|   ^|
-echo            --^+---^+---^+---^+--
-echo                  ^| ~ ^|
-echo                  ^+---^+
-echo.
-echo.
-echo.
-)
-if "%location%" == "route3_5" (
-if "%light%" == "no" (
-echo      ^> Without a source of light, you can see almost nothing.
-echo      ^> "i" to open inventory
-goto returnLocation
-)
-echo      ~ You are here ^(wilderness^).
-echo      W You can go "west" from here.
-echo      E You can go "east" from here.
-echo.
-echo.
-echo               ^| ^|
-echo              ^+---^+
-echo              ^|   ^|
-echo            --^+---^+---^+---^+__
-echo              ^| W ^| ~ ^| E ^|__
-echo            --^+---^+---^+---^+
-echo              ^|   ^|    ^| ^|
-echo              ^+---^+   ^+---^+
-echo                      ^|   ^|
-echo.
-)
 if "%location%" == "route3_6" (
 echo      ~ You are here ^(wilderness^).
-echo      W You can go "west" from here.
+echo      e You can go "east" from here.
 echo      s You can go "south" from here.
 echo.
-echo             ^|
+echo              ^|
 echo            --^+
 echo              ^|
-echo            --^+---^+---^+___^+--
-echo              ^|   ^| ~ ^| E ^|
 echo            --^+---^+---^+---^+--
-echo              ^|    ^|S^|
+echo              ^|   ^| ~ ^| e ^|
+echo            --^+---^+---^+---^+--
+echo              ^|    ^|s^|
 echo            --^+   ^+---^+
 echo                  ^|   ^|
 echo.
@@ -868,15 +905,15 @@ echo      ^> "i" to open inventory
 goto returnLocation
 )
 echo      ~ You are here ^(wilderness^).
-echo      W You can go "west" from here.
-echo      E You can go "east" from here.
+echo      w You can go "west" from here.
+echo      e You can go "east" from here.
 echo.
 echo.
-echo              ^|   ^|    ^| ^|
-echo              ^+---^+   ^+---^+
+echo                      ^|   ^|
+echo                      ^+---^+
 echo                      ^|   ^|
 echo              ^+---^+---^+---^+--
-echo              ^| W ^| ~ ^| E ^|
+echo              ^| w ^| ~ ^| e ^|
 echo              ^+---^+---^+---^+--
 echo                      ^|   ^|
 echo                      ^+---^+
@@ -889,14 +926,14 @@ echo      ^> "i" to open inventory
 goto returnLocation
 )
 echo      ~ You are here ^(wilderness^).
-echo      E You can go "east" from here.
+echo      e You can go "east" from here.
 echo.
 echo.
-echo                  ^|   ^|    ^|
-echo                  ^+---^+   ^+--
+echo                          ^|
+echo                          ^+--
 echo                          ^|
 echo                  ^+---^+---^+--
-echo                  ^| ~ ^| E ^|
+echo                  ^| ~ ^| e ^|
 echo                  ^+---^+---^+--
 echo                          ^|
 echo                          ^+--
@@ -1083,7 +1120,25 @@ echo      ^> You see a quaint hut.
 if "%location%" == "route3_quainthut" (
 echo      ^> The apothecary from your hometown is here.
 echo      ^> Apparently this is his hut. There are ingredients and paraphernalia about.
+echo      ^> There is access to a garden from here.
 )
+
+if "%location%" == "route3_apothecarysgarden" (
+echo      ^> It's a lovely place accessible only from the apothecary's quaint hut.
+if "%apothecaryvegetables%" == "present" (
+echo      ^> Some vegetables are ready to take.
+)
+)
+
+if "%location%" == "route3_caveentrance" (
+echo      ^> The wretched stench makes you want to turn away and run from the cave.
+
+if "%route3_caveentrance_pickaxe%" == "present" (
+echo      ^> There is a pickaxe on the ground.
+)
+)
+
+
 if "%location%" == "route3_3" (
 if "%light%" == "no" (
 echo      ^> Without a source of light, you can see almost nothing.
@@ -1604,6 +1659,18 @@ if "%input%" == "use scimitar" goto inventory_use_goblinscimitar
 )
 
 
+if %item_goblinstaff% GTR 0 (
+if "%input%" == "goblin staff" goto inventory_examine_goblinstaff
+if "%input%" == "examine goblin staff" goto inventory_examine_goblinstaff
+if "%input%" == "x goblin staff" goto inventory_examine_goblinstaff
+if "%input%" == "look at goblin staff" goto inventory_examine_goblinstaff
+if "%input%" == "use goblin staff" goto inventory_use_goblinstaff
+if "%input%" == "staff" goto inventory_examine_goblinstaff
+if "%input%" == "examine staff" goto inventory_examine_goblinstaff
+if "%input%" == "x staff" goto inventory_examine_goblinstaff
+if "%input%" == "look at staff" goto inventory_examine_goblinstaff
+if "%input%" == "use staff" goto inventory_use_goblinstaff
+)
 
 if %item_ironbuckler% GTR 0 (
 if "%input%" == "iron buckler" goto inventory_examine_ironbuckler
@@ -2437,6 +2504,39 @@ echo    [You try to equip an item, but the slot is full.]
 echo      ^> "use" the other item to unequip it first.
 goto returnLocation
 
+
+
+
+:inventory_examine_goblinstaff
+echo.
+echo    [You examine the goblin staff.]
+echo      ^> A short, thin, wooden club.
+echo      ^> 1-2 damage.
+echo      ^> "use goblin staff" to equip or unequip
+if "%inventory%" == "closed" goto returnLocation
+goto returnLocation
+
+:inventory_use_goblinstaff
+echo.
+if "%weapon%" == "goblin staff" (
+echo    [You unequip the goblin staff.]
+set weapon=none
+set damage_min=1
+set damage_max=1
+goto returnLocation
+)
+if "%weapon%" == "none" (
+echo    [You equip the goblin staff.]
+echo      ^> A short, thin, wooden club.
+echo      ^> "use goblin staff" to unequip
+set weapon=goblin staff
+set damage_min=1
+set damage_max=2
+goto returnLocation
+)
+echo    [You try to equip an item, but the slot is full.]
+echo      ^> "use" the other item to unequip it first.
+goto returnLocation
 
 
 :inventory_examine_goldmedal
@@ -3469,7 +3569,6 @@ if "%input%" == "look at rat" goto look
 if "%input%" == "examine rat" goto look
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -3596,7 +3695,6 @@ if "%input%" == "look at goblin" goto look
 if "%input%" == "examine goblin" goto look
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -3731,7 +3829,6 @@ if "%input%" == "x chief" goto look
 if "%input%" == "x" goto look
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -3916,7 +4013,6 @@ if "%input%" == "x" goto look
 
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -4014,7 +4110,7 @@ echo      ^> "i" to open inventory
 set confusion=no
 set /a items=%items% + 2
 set /a item_goblinstaff=%item_goblinstaff% + 1
-set /a item_antidote=%item_antidote% + 2
+set /a item_antidote=%item_antidote% + 1
 set goblinshaman=dead
 set combat=no
 set enemy=none
@@ -4103,7 +4199,6 @@ if "%input%" == "look at centipede" goto look
 if "%input%" == "examine centipede" goto look
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -4268,7 +4363,6 @@ if "%input%" == "look at centipede" goto look
 if "%input%" == "examine centipede" goto look
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -4434,7 +4528,6 @@ if "%input%" == "look at fly" goto look
 if "%input%" == "examine fly" goto look
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -4631,7 +4724,7 @@ if "%input%" == "enter hometown" goto tile_hometown_north
 if "%input%" == "go to hometown" goto tile_hometown_north
 
 goto inventoryCommands
-goto commandError
+
 
 
 :route1_2_randomeventcheck
@@ -4728,7 +4821,7 @@ if "%input%" == "leave peaceful forest" goto tile_route1_1
 if "%input%" == "exit peaceful forest" goto tile_route1_1
 
 goto inventoryCommands
-goto commandError
+
 
 :route1_3_restoration
 set /a HPdeficit=%maxHP% - %HP%
@@ -4778,7 +4871,7 @@ if "%input%" == "south" goto tile_route1_2
 if "%input%" == "go south" goto tile_route1_2
 
 goto inventoryCommands
-goto commandError
+
 
 
 
@@ -4907,7 +5000,6 @@ if "%input%" == "go home" goto tile_hometown_myhouse
 if "%input%" == "enter home" goto tile_hometown_myhouse
 
 goto inventoryCommands
-goto commandError
 
 
 :tile_hometown_potionshop
@@ -4981,7 +5073,6 @@ if "%input%" == "leave shop" goto tile_hometown_north
 if "%input%" == "exit shop" goto tile_hometown_north
 
 goto inventoryCommands
-goto commandError
 
 :hometown_potionshop_takepotion
 echo.
@@ -5053,7 +5144,6 @@ if "%input%" == "leave my house" goto tile_hometown_north
 if "%input%" == "exit my house" goto tile_hometown_north
 
 goto inventoryCommands
-goto commandError
 
 :hometown_myhouse_favoritesweater
 echo.
@@ -5196,7 +5286,6 @@ if "%input%" == "go to my best friends house" goto tile_hometown_bestfriendshous
 if "%input%" == "go in my best friends house" goto tile_hometown_bestfriendshouse
 
 goto inventoryCommands
-goto commandError
 
 :tile_hometown_weaponshop
 if "%location%" == "hometown_south" (
@@ -5256,7 +5345,6 @@ if "%input%" == "leave shop" goto tile_hometown_south
 if "%input%" == "exit shop" goto tile_hometown_south
 
 goto inventoryCommands
-goto commandError
 
 :hometown_weaponshop_woodensword
 echo.
@@ -5388,7 +5476,6 @@ if "%input%" == "leave my best friend's house" goto tile_hometown_south
 if "%input%" == "exit my best friend's house" goto tile_hometown_south
 
 goto inventoryCommands
-goto commandError
 
 :hometown_bestfriendshouse_note
 echo.
@@ -5451,7 +5538,6 @@ if "%input%" == "go monster lands" goto tile_route2_2
 if "%input%" == "enter monster lands" goto tile_route2_2
 
 goto inventoryCommands
-goto commandError
 
 :tile_route2_2
 if "%location%" == "route2_1" (
@@ -5517,7 +5603,6 @@ if "%input%" == "dark swampy forest" goto tile_route2_3
 if "%input%" == "dark forest" goto tile_route2_3
 
 goto inventoryCommands
-goto commandError
 
 :readsign_route2_2
 echo.
@@ -5604,7 +5689,6 @@ if "%input%" == "east" goto tile_route2_4
 if "%input%" == "go east" goto tile_route2_4
 
 goto inventoryCommands
-goto commandError
 
 :tile_route2_4
 if "%location%" == "route2_3" (
@@ -5653,8 +5737,6 @@ if "%input%" == "east" goto tile_route2_5
 if "%input%" == "go east" goto tile_route2_5
 
 goto inventoryCommands
-goto commandError
-
 
 
 
@@ -5677,23 +5759,17 @@ if NOT "%weapon%" == "none" (
 echo      ^> The vine deals 1 damage, before you hack it down with your weapon.
 set /a HP=%HP% - 1
 if %HP% LSS 1 goto youdie
+echo      ^> You have %HP%/%maxHP% HP.
 )
 if "%weapon%" == "none" (
 echo      ^> The vine deals 3 damage, before you swat it away.
 set /a HP=%HP% - 3
 if %HP% LSS 1 goto youdie
+echo      ^> You have %HP%/%maxHP% HP.
 )
 )
 goto returnLocation
 
-
-echo.
-echo    [You take three purple mushrooms.]
-echo      ^> "i" to open inventory
-set route2_8_mushrooms=absent
-set /a items=%items% + 3
-set /a item_purplemushroom=%item_purplemushroom% + 3
-goto returnLocation
 
 
 
@@ -5756,7 +5832,7 @@ if "%input%" == "exit swampy forest" goto tile_route2_6
 if "%input%" == "exit dark forest" goto tile_route2_6
 
 goto inventoryCommands
-goto commandError
+
 
 :tile_route2_6
 if "%location%" == "route2_5" (
@@ -5813,6 +5889,11 @@ if "%input%" == "look at oval faced man" goto examine_ovalfacedman
 if "%input%" == "look at ovalfaced man" goto examine_ovalfacedman
 if "%input%" == "look at oval-faced man" goto examine_ovalfacedman
 if "%input%" == "look at him" goto examine_ovalfacedman
+
+if "%input%" == "talk" goto talkto_ovalfacedman
+if "%input%" == "chat" goto talkto_ovalfacedman
+if "%input%" == "speak" goto talkto_ovalfacedman
+
 if "%input%" == "talk to man" goto talkto_ovalfacedman
 if "%input%" == "talk to oval faced man" goto talkto_ovalfacedman
 if "%input%" == "talk to ovalfaced man" goto talkto_ovalfacedman
@@ -5866,7 +5947,7 @@ if "%input%" == "cross shaky wooden bridge" goto tile_route3_1
 if "%input%" == "cross shaky bridge" goto tile_route3_1
 
 goto inventoryCommands
-goto commandError
+
 
 :examine_ovalfacedman
 echo.
@@ -5914,6 +5995,7 @@ echo      ^> "Well, he's definitely still in there," the oval-faced man says.
 echo      ^> "If you see him, tell him I'm still waiting."
 if %charisma% GTR 0 (
 if "%ovalfacedman_loot%" == "not given" (
+if "%feet%" == "none" (
 echo      ^> The oval-faced man looks down at your bare feet.
 echo      ^> "Here," he adds. "You seem nice; should have these."
 echo.
@@ -5923,6 +6005,17 @@ set ovalfacedman_loot=given
 set /a items=%items% + 2
 set /a item_healthpotion=%item_healthpotion% + 1
 set /a item_ruinedmoccasins=%item_ruinedmoccasins% + 1
+)
+if NOT "%feet%" == "none" (
+echo      ^> The oval-faced man smiles.
+echo      ^> "Here," he adds. "You seem nice; should have this."
+echo.
+echo    [You receive 1 health potion.]
+echo      ^> "i" to open inventory
+set ovalfacedman_loot=given
+set /a items=%items% + 1
+set /a item_healthpotion=%item_healthpotion% + 1
+)
 )
 )
 goto tile_route2_6
@@ -5968,12 +6061,15 @@ echo      ^> For how long would the oval-faced man wait here?
 echo      ^> You couldn't lie to him.
 goto talkto_ovalfacedman2
 )
+
 echo.
 echo    [You shake your head and shrug empty-handedly.]
 echo      ^> "Then the hero must be alive," the oval-faced man concludes.
 echo      ^> "If you see him, tell him I'm still waiting."
+
 if %charisma% GTR 0 (
 if "%ovalfacedman_loot%" == "not given" (
+if "%feet%" == "none" (
 echo      ^> The oval-faced man looks down at your bare feet.
 echo      ^> "Here," he adds. "You seem nice; should have these."
 echo.
@@ -5983,6 +6079,17 @@ set ovalfacedman_loot=given
 set /a items=%items% + 2
 set /a item_healthpotion=%item_healthpotion% + 1
 set /a item_ruinedmoccasins=%item_ruinedmoccasins% + 1
+)
+if NOT "%feet%" == "none" (
+echo      ^> The oval-faced man smiles.
+echo      ^> "Here," he adds. "You seem nice; should have this."
+echo.
+echo    [You receive 1 health potion.]
+echo      ^> "i" to open inventory
+set ovalfacedman_loot=given
+set /a items=%items% + 1
+set /a item_healthpotion=%item_healthpotion% + 1
+)
 )
 )
 goto tile_route2_6
@@ -6004,16 +6111,27 @@ echo      ^> "I... I guess it's true...
 echo      ^> "Thank you for the closure." --- :^)
 if %charisma% GTR 0 (
 if "%ovalfacedman_loot%" == "not given" (
+if "%feet%" == "none" (
 echo      ^> The oval-faced man looks down at your bare feet.
 echo      ^> "Here," he adds. "You seem nice; should have these."
 echo.
 echo    [You receive a health potion and some ruined moccasins.]
 echo      ^> "i" to open inventory
-set /a luck=%luck% + 5
 set ovalfacedman_loot=given
 set /a items=%items% + 2
 set /a item_healthpotion=%item_healthpotion% + 1
 set /a item_ruinedmoccasins=%item_ruinedmoccasins% + 1
+)
+if NOT "%feet%" == "none" (
+echo      ^> The oval-faced man smiles.
+echo      ^> "Here," he adds. "You seem nice; should have this."
+echo.
+echo    [You receive 1 health potion.]
+echo      ^> "i" to open inventory
+set ovalfacedman_loot=given
+set /a items=%items% + 1
+set /a item_healthpotion=%item_healthpotion% + 1
+)
 )
 )
 
@@ -6197,7 +6315,7 @@ if "%input%" == "south" goto tile_route2_8
 if "%input%" == "go south" goto tile_route2_8
 
 goto inventoryCommands
-goto commandError
+
 
 :tile_route2_8
 if "%location%" == "route2_7" (
@@ -6270,7 +6388,7 @@ if "%input%" == "north" goto tile_route2_7
 if "%input%" == "go north" goto tile_route2_7
 
 goto inventoryCommands
-goto commandError
+
 
 :route2_8_mushrooms
 echo.
@@ -6349,7 +6467,7 @@ if "%input%" == "enter rocky field" goto tile_route3_2
 
 
 goto inventoryCommands
-goto commandError
+
 
 
 
@@ -6368,10 +6486,12 @@ goto tile_route3_2_continued
 if "%location%" == "route3_1" (
 echo.
 echo    [You step off the shaky wooden bridge into a rocky field.]
+goto route3_2_randomencountercheck
 )
 if "%location%" == "route3_3" (
 echo.
-echo    [You walk north and exit the dark fetid cave.]
+echo    [You walk north, away from the mouth of the dark fetid cave.]
+goto route3_2_randomencountercheck
 )
 :tile_route3_2_continued
 set location=route3_2
@@ -6439,40 +6559,40 @@ if "%input%" == "go inside" goto tile_route3_quainthut
 
 
 
-if "%input%" == "south" goto tile_route3_3
-if "%input%" == "go south" goto tile_route3_3
-if "%input%" == "cave" goto tile_route3_3
-if "%input%" == "fetid cave" goto tile_route3_3
-if "%input%" == "dark cave" goto tile_route3_3
-if "%input%" == "dark fetid cave" goto tile_route3_3
-if "%input%" == "go to cave" goto tile_route3_3
-if "%input%" == "go to fetid cave" goto tile_route3_3
-if "%input%" == "go to dark cave" goto tile_route3_3
-if "%input%" == "go to dark fetid cave" goto tile_route3_3
-if "%input%" == "go in cave" goto tile_route3_3
-if "%input%" == "go in fetid cave" goto tile_route3_3
-if "%input%" == "go in dark cave" goto tile_route3_3
-if "%input%" == "go in dark fetid cave" goto tile_route3_3
-if "%input%" == "enter cave" goto tile_route3_3
-if "%input%" == "enter fetid cave" goto tile_route3_3
-if "%input%" == "enter dark cave" goto tile_route3_3
-if "%input%" == "enter dark fetid cave" goto tile_route3_3
-if "%input%" == "cave entrance" goto tile_route3_3
-if "%input%" == "fetid cave entrance" goto tile_route3_3
-if "%input%" == "dark cave entrance" goto tile_route3_3
-if "%input%" == "dark fetid cave entrance" goto tile_route3_3
-if "%input%" == "go to cave entrance" goto tile_route3_3
-if "%input%" == "go to fetid cave entrance" goto tile_route3_3
-if "%input%" == "go to dark cave entrance" goto tile_route3_3
-if "%input%" == "go to dark fetid cave entrance" goto tile_route3_3
-if "%input%" == "go in cave entrance" goto tile_route3_3
-if "%input%" == "go in fetid cave entrance" goto tile_route3_3
-if "%input%" == "go in dark cave entrance" goto tile_route3_3
-if "%input%" == "go in dark fetid cave entrance" goto tile_route3_3
-if "%input%" == "enter cave entrance" goto tile_route3_3
-if "%input%" == "enter fetid cave entrance" goto tile_route3_3
-if "%input%" == "enter dark cave entrance" goto tile_route3_3
-if "%input%" == "enter dark fetid cave entrance" goto tile_route3_3
+if "%input%" == "south" goto tile_route3_caveentrance
+if "%input%" == "go south" goto tile_route3_caveentrance
+if "%input%" == "cave" goto tile_route3_caveentrance
+if "%input%" == "fetid cave" goto tile_route3_caveentrance
+if "%input%" == "dark cave" goto tile_route3_caveentrance
+if "%input%" == "dark fetid cave" goto tile_route3_caveentrance
+if "%input%" == "go to cave" goto tile_route3_caveentrance
+if "%input%" == "go to fetid cave" goto tile_route3_caveentrance
+if "%input%" == "go to dark cave" goto tile_route3_caveentrance
+if "%input%" == "go to dark fetid cave" goto tile_route3_caveentrance
+if "%input%" == "go in cave" goto tile_route3_caveentrance
+if "%input%" == "go in fetid cave" goto tile_route3_caveentrance
+if "%input%" == "go in dark cave" goto tile_route3_caveentrance
+if "%input%" == "go in dark fetid cave" goto tile_route3_caveentrance
+if "%input%" == "enter cave" goto tile_route3_caveentrance
+if "%input%" == "enter fetid cave" goto tile_route3_caveentrance
+if "%input%" == "enter dark cave" goto tile_route3_caveentrance
+if "%input%" == "enter dark fetid cave" goto tile_route3_caveentrance
+if "%input%" == "cave entrance" goto tile_route3_caveentrance
+if "%input%" == "fetid cave entrance" goto tile_route3_caveentrance
+if "%input%" == "dark cave entrance" goto tile_route3_caveentrance
+if "%input%" == "dark fetid cave entrance" goto tile_route3_caveentrance
+if "%input%" == "go to cave entrance" goto tile_route3_caveentrance
+if "%input%" == "go to fetid cave entrance" goto tile_route3_caveentrance
+if "%input%" == "go to dark cave entrance" goto tile_route3_caveentrance
+if "%input%" == "go to dark fetid cave entrance" goto tile_route3_caveentrance
+if "%input%" == "go in cave entrance" goto tile_route3_caveentrance
+if "%input%" == "go in fetid cave entrance" goto tile_route3_caveentrance
+if "%input%" == "go in dark cave entrance" goto tile_route3_caveentrance
+if "%input%" == "go in dark fetid cave entrance" goto tile_route3_caveentrance
+if "%input%" == "enter cave entrance" goto tile_route3_caveentrance
+if "%input%" == "enter fetid cave entrance" goto tile_route3_caveentrance
+if "%input%" == "enter dark cave entrance" goto tile_route3_caveentrance
+if "%input%" == "enter dark fetid cave entrance" goto tile_route3_caveentrance
 
 if "%input%" == "m" goto map
 if "%input%" == "map" goto map
@@ -6488,7 +6608,6 @@ if "%input%" == "help" goto help
 
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -6524,7 +6643,7 @@ echo    [You shake your head.]
 echo      ^> "Okay," the apothecary says. "Guess I'll die here."
 set apothecarycutscene1=yes
 goto returnLocation
-rummagingthroughyourwoodenweapons
+
 :apothecarycutscene1_yes
 set apothecarycutscene1=yes
 set rummagingthroughyourwoodenweapons=yes
@@ -6532,16 +6651,24 @@ echo.
 echo    [You rummage through your inventory for wooden weapons...]
 if %item_woodensword% LSS 1 (
 if %item_goblinscimitar% LSS 1 (
+if %item_goblinstaff% LSS 1 (
 echo      ^> You have no wooden weapons.
 echo      ^> "Okay," the apothecary says. "Guess I'll die here."
 set rummagingthroughyourwoodenweapons=no
 goto returnLocation
 )
 )
+)
 if %item_goblinscimitar% GTR 0 (
 echo      ^> goblin scimitar x%item_goblinscimitar%
 if "%weapon%" == "goblin scimitar" (
 echo         (equipped --- 1-3^)
+)
+)
+if %item_goblinstaff% GTR 0 (
+echo      ^> goblin staff x%item_goblinstaff%
+if "%weapon%" == "goblin staff" (
+echo         (equipped --- 1-2^)
 )
 )
 if %item_woodensword% GTR 0 (
@@ -6555,6 +6682,9 @@ echo    [What weapon do you offer to the apothecary?]
 if %item_goblinscimitar% GTR 0 (
 echo      ^> goblin scimitar
 )
+if %item_goblinstaff% GTR 0 (
+echo      ^> goblin staff
+)
 if %item_woodensword% GTR 0 (
 echo      ^> wooden sword
 )
@@ -6564,13 +6694,22 @@ set input=noInput
 set /p input=
 if "%input%" == "noInput" goto returnLocation
 if %item_woodensword% GTR 0 (
+if "%input%" == "use sword" goto apothecaryoffer_woodensword
+if "%input%" == "use wooden sword" goto apothecaryoffer_woodensword
 if "%input%" == "sword" goto apothecaryoffer_woodensword
 if "%input%" == "wooden sword" goto apothecaryoffer_woodensword
 )
 if %item_goblinscimitar% GTR 0 (
 if "%input%" == "scimitar" goto apothecaryoffer_goblinscimitar
 if "%input%" == "goblin scimitar" goto apothecaryoffer_goblinscimitar
-if "%input%" == "goblin" goto apothecaryoffer_goblinscimitar
+if "%input%" == "use scimitar" goto apothecaryoffer_goblinscimitar
+if "%input%" == "use goblin scimitar" goto apothecaryoffer_goblinscimitar
+)
+if %item_goblinstaff% GTR 0 (
+if "%input%" == "staff" goto apothecaryoffer_goblinstaff
+if "%input%" == "goblin staff" goto apothecaryoffer_goblinstaff
+if "%input%" == "use staff" goto apothecaryoffer_goblinstaff
+if "%input%" == "use goblin staff" goto apothecaryoffer_goblinstaff
 )
 if "%input%" == "none" goto apothecarycutscene1_no
 goto commandError
@@ -6639,6 +6778,39 @@ set givenapothecarysword=yes
 goto returnLocation
 
 
+:apothecaryoffer_goblinstaff
+set rummagingthroughyourwoodenweapons=no
+set apothecarycutscene1=yes
+echo.
+if NOT "%weapon%" == "goblin staff" (
+echo    [You offer up a goblin staff.]
+set /a items=%items% - 1
+set /a item_goblinstaff=%item_goblinstaff% - 1
+)
+if "%weapon%" == "goblin staff" (
+if %item_goblinstaff% == 1 (
+echo    [You unequip and offer up your goblin staff.]
+set weapon=none
+set damage_min=1
+set damage_max=1
+set /a items=%items% - 1
+set /a item_goblinstaff=%item_goblinstaff% - 1
+)
+)
+echo.
+echo      ^> The apothecary brandishes the weapon a few times, very pleased.
+echo      ^> "This weapon has special properties, so I really appreciate it." --- :^)
+echo      ^> "Here, take this. For now it's my only one.
+echo      ^> "I'll make more potions if you bring me ingredients."
+echo.
+echo    [You receive one antidote.]
+set /a luck=%luck% + 7
+set /a items=%items% + 1
+set /a item_antidote=%item_antidote% + 1
+set givenapothecarysword=yes
+goto returnLocation
+
+
 :route3_2_examine_quainthut
 echo.
 echo    [You examine the quaint hut.]
@@ -6656,6 +6828,11 @@ set location=route3_quainthut
 goto encounter_cavefly                                                              
 )
 )
+if "%location%" == "route3_apothecarygarden" (
+echo.
+echo    [You leave the garden and return to the hut.]
+echo      ^> The apothecary comes with you.
+)
 
 if "%apothecarycutscene1%" == "no" goto apothecarycutscene1
 :tile_route3_quainthut_continued
@@ -6663,7 +6840,7 @@ set location=route3_quainthut
 echo.
 echo  * You are inside a quaint hut in a rocky field.
 echo      ^> The apothecary from your village is here.
-echo      ^> From here you can leave.
+echo      ^> From here you can go the apothecary's garden or leave.
 if "%firsttime_tile_route3_quainthut%" == "no" (
 echo      ^> "h" for help
 echo      ^> "l" to look around
@@ -6677,6 +6854,22 @@ set /p input=
 if "%input%" == "noInput" goto returnLocation
 
 if "%input%" == "" goto 
+
+
+if "%input%" == "go to garden" goto tile_route3_apothecarysgarden
+if "%input%" == "enter garden" goto tile_route3_apothecarysgarden
+if "%input%" == "go to apothecarys garden" goto tile_route3_apothecarysgarden
+if "%input%" == "enter apothecarys garden" goto tile_route3_apothecarysgarden
+if "%input%" == "go to apothecary's garden" goto tile_route3_apothecarysgarden
+if "%input%" == "enter apothecary's garden" goto tile_route3_apothecarysgarden
+if "%input%" == "go in garden" goto tile_route3_apothecarysgarden
+if "%input%" == "go inside garden" goto tile_route3_apothecarysgarden
+if "%input%" == "go in apothecarys garden" goto tile_route3_apothecarysgarden
+if "%input%" == "go inside apothecarys garden" goto tile_route3_apothecarysgarden
+if "%input%" == "go in apothecary's garden" goto tile_route3_apothecarysgarden
+if "%input%" == "go inside apothecary's garden" goto tile_route3_apothecarysgarden
+
+
 
 
 if "%input%" == "leave hut" goto tile_route3_2
@@ -6706,6 +6899,11 @@ if "%input%" == "look at man" goto examine_apothecary
 if "%input%" == "look at feeble man" goto examine_apothecary
 if "%input%" == "look at him" goto examine_apothecary
 
+
+if "%input%" == "talk" goto talkto_apothecary
+if "%input%" == "chat" goto talkto_apothecary
+if "%input%" == "speak" goto talkto_apothecary
+
 if "%input%" == "talk to man" goto talkto_apothecary
 if "%input%" == "talk to feeble man" goto talkto_apothecary
 if "%input%" == "talk to him" goto talkto_apothecary
@@ -6728,7 +6926,6 @@ if "%input%" == "look at him" goto examine_apothecary
 
 if "%input%" == "talk to apothecary" goto talkto_apothecary
 if "%input%" == "talk to feeble apothecary" goto talkto_apothecary
-if "%input%" == "talk to him" goto talkto_apothecary
 if "%input%" == "speak to apothecary" goto talkto_apothecary
 if "%input%" == "speak to feeble apothecary" goto talkto_apothecary
 if "%input%" == "speak to him" goto talkto_apothecary
@@ -6752,7 +6949,7 @@ if "%input%" == "help" goto help
 
 
 goto inventoryCommands
-goto commandError
+
 
 
 
@@ -6765,15 +6962,414 @@ goto returnLocation
 
 :talkto_apothecary
 if "%givenapothecarysword%" == "no" goto apothecarycutscene1
+
+if %charisma% GTR 1 (
+if "%apothecarygardenpermission%" == "no" (
 echo.
 echo    [You talk to the apothecary.]
-echo      ^> "I'll make more potions if you bring me ingredients," he says.
-echo      ^> "For now I'm going to rest and practice with my new sword.
-echo      ^> "But be on the look out for purple mushrooms, bug eggs, and vegetables."
+echo      ^> "Feel free to take the ingredients in my garden.
+echo      ^> "I plant something new every so often."
+set apothecarygardenpermission=yes
+)
+)
+
+
+set /a randomdialogue=1 + %RANDOM% %% (3 - 1 + 1)
+echo.
+echo    [You talk to the apothecary.]
+if %randomdialogue% == 1 (
+echo      ^> "I will set up a home here temporarily.
+echo      ^> "Eventually I will return to our old hometown."
+)
+if %randomdialogue% == 2 (
+echo      ^> "No potions. For now I'm going to rest and practice with my new weapon.
+echo      ^> "Come back later with ingredients, and maybe I'll make you some potions."
+)
+if %randomdialogue% == 3 (
+echo      ^> "Keep a look out for common potion ingredients.
+echo      ^> "Purple mushrooms, bug eggs, vegetables..."
+)
 goto returnLocation
 
-:tile_route3_3
+
+:takeapothecaryvegetables
+set /a numbervegetables=3 + %RANDOM% %% (5 - 1 + 1)
+echo.
+if "%apothecarygardenpermission%" == "no" (
+echo    [You attempt to harvest the garden.]
+echo      ^> The apothecary stops you.
+echo      ^> "I can harvest my own vegetables, thank you."
+goto returnLocation
+)
+
+
+if %apothecaryvegetable% == 1 (
+echo    [You harvest %numbervegetables% carrots.]
+echo      ^> "i" to open inventory
+set /a items=%items% + %numbervegetables%
+set /a item_carrot=%item_carrot% + %numbervegetables%
+)
+if %apothecaryvegetable% == 2 (
+echo    [You harvest %numbervegetables% spinach.]
+echo      ^> "i" to open inventory
+set /a items=%items% + %numbervegetables%
+set /a item_spinach=%item_spinach% + %numbervegetables%
+)
+if %apothecaryvegetable% == 3 (
+echo    [You harvest %numbervegetables% turnips.]
+echo      ^> "i" to open inventory
+set /a items=%items% + %numbervegetables%
+set /a item_turnip=%item_turnip% + %numbervegetables%
+)
+if %apothecaryvegetable% == 4 (
+echo    [You harvest %numbervegetables% potatoes.]
+echo      ^> "i" to open inventory
+set /a items=%items% + %numbervegetables%
+set /a item_potato=%item_potato% + %numbervegetables%
+)
+if %apothecaryvegetable% == 5 (
+echo    [You harvest %numbervegetables% broccoli.]
+echo      ^> "i" to open inventory
+set /a items=%items% + %numbervegetables%
+set /a item_broccoli=%item_broccoli% + %numbervegetables%
+)
+set apothecaryvegetables=absent
+set /a apothecaryvegetable=1 + %RANDOM% %% (5 - 1 + 1)
+goto returnLocation
+
+:examine_apothecaryvegetables
+echo.
+echo    [You examine the vegetables in the garden.]
+
+if %apothecaryvegetable% == 1 (
+echo      ^> The apothecary is growing carrots.
+)
+if %apothecaryvegetable% == 2 (
+echo      ^> The apothecary is growing spinach.
+)
+if %apothecaryvegetable% == 3 (
+echo      ^> The apothecary is growing turnips.
+)
+if %apothecaryvegetable% == 4 (
+echo      ^> The apothecary is growing potatoes.
+)
+if %apothecaryvegetable% == 5 (
+echo      ^> The apothecary is growing broccoli.
+)
+goto returnLocation
+
+
+
+:tile_route3_apothecarysgarden
+if "%location%" == "route3_quainthut" (
+echo.
+echo    [You enter the apothecary's garden.]
+echo      ^> The apothecary comes with you.
+)
+set location=route3_apothecarysgarden
+echo.
+echo  * You are in the apothecary's garden.
+echo      ^> The apothecary from your village is here.
+echo      ^> From here you can leave.
+echo.
+echo    [What do you do?]
+echo.
+set input=noInput
+set /p input=
+if "%input%" == "noInput" goto returnLocation
+
+if "%input%" == "" goto 
+
+
+if "%input%" == "leave garden" goto tile_route3_quainthut
+if "%input%" == "exit garden" goto tile_route3_quainthut
+if "%input%" == "leave apothecarys garden" goto tile_route3_quainthut
+if "%input%" == "exit apothecarys garden" goto tile_route3_quainthut
+if "%input%" == "leave apothecary's garden" goto tile_route3_quainthut
+if "%input%" == "exit apothecary's garden" goto tile_route3_quainthut
+if "%input%" == "go back" goto tile_route3_quainthut
+if "%input%" == "back" goto tile_route3_quainthut
+if "%input%" == "exit" goto tile_route3_quainthut
+if "%input%" == "leave" goto tile_route3_quainthut
+
+if "%apothecaryvegetables%" == "present" (
+
+if "%input%" == "take carrot" goto takeapothecaryvegetables
+if "%input%" == "take carrots" goto takeapothecaryvegetables
+if "%input%" == "take spinach" goto takeapothecaryvegetables
+if "%input%" == "take potato" goto takeapothecaryvegetables
+if "%input%" == "take potatoes" goto takeapothecaryvegetables
+if "%input%" == "take turnip" goto takeapothecaryvegetables
+if "%input%" == "take turnips" goto takeapothecaryvegetables
+if "%input%" == "take broccoli" goto takeapothecaryvegetables
+if "%input%" == "harvest carrot" goto takeapothecaryvegetables
+if "%input%" == "harvest carrots" goto takeapothecaryvegetables
+if "%input%" == "harvest spinach" goto takeapothecaryvegetables
+if "%input%" == "harvest potato" goto takeapothecaryvegetables
+if "%input%" == "harvest potatoes" goto takeapothecaryvegetables
+if "%input%" == "harvest turnip" goto takeapothecaryvegetables
+if "%input%" == "harvest turnips" goto takeapothecaryvegetables
+if "%input%" == "harvest broccoli" goto takeapothecaryvegetables
+
+
+if "%input%" == "take vegetables" goto takeapothecaryvegetables
+if "%input%" == "take veggies" goto takeapothecaryvegetables
+if "%input%" == "take them" goto takeapothecaryvegetables
+if "%input%" == "take garden" goto takeapothecaryvegetables
+if "%input%" == "take harvest" goto takeapothecaryvegetables
+
+if "%input%" == "pick vegetables" goto takeapothecaryvegetables
+if "%input%" == "pick veggies" goto takeapothecaryvegetables
+if "%input%" == "pick them" goto takeapothecaryvegetables
+if "%input%" == "pick garden" goto takeapothecaryvegetables
+if "%input%" == "pick harvest" goto takeapothecaryvegetables
+
+if "%input%" == "harvest vegetables" goto takeapothecaryvegetables
+if "%input%" == "harvest veggies" goto takeapothecaryvegetables
+if "%input%" == "harvest them" goto takeapothecaryvegetables
+if "%input%" == "harvest garden" goto takeapothecaryvegetables
+if "%input%" == "harvest harvest" goto takeapothecaryvegetables
+if "%input%" == "harvest" goto takeapothecaryvegetables
+
+if "%input%" == "vegetables" goto examine_apothecaryvegetables
+if "%input%" == "veggies" goto examine_apothecaryvegetables
+if "%input%" == "garden" goto examine_apothecaryvegetables
+if "%input%" == "harvest" goto examine_apothecaryvegetables
+
+if "%input%" == "look at veggies" goto examine_apothecaryvegetables
+if "%input%" == "look at vegetables" goto examine_apothecaryvegetables
+if "%input%" == "look at harvest" goto examine_apothecaryvegetables
+if "%input%" == "look at garden" goto examine_apothecaryvegetables
+if "%input%" == "look at them" goto examine_apothecaryvegetables
+
+if "%input%" == "examine veggies" goto examine_apothecaryvegetables
+if "%input%" == "examine vegetables" goto examine_apothecaryvegetables
+if "%input%" == "examine harvest" goto examine_apothecaryvegetables
+if "%input%" == "examine garden" goto examine_apothecaryvegetables
+if "%input%" == "examine them" goto examine_apothecaryvegetables
+
+if "%input%" == "x veggies" goto examine_apothecaryvegetables
+if "%input%" == "x vegetables" goto examine_apothecaryvegetables
+if "%input%" == "x harvest" goto examine_apothecaryvegetables
+if "%input%" == "x garden" goto examine_apothecaryvegetables
+if "%input%" == "x them" goto examine_apothecaryvegetables
+)
+ 
+if "%apothecary%" == "present" (
+if "%input%" == "man" goto examine_apothecary
+if "%input%" == "feeble man" goto examine_apothecary
+if "%input%" == "him" goto examine_apothecary
+if "%input%" == "examine man" goto examine_apothecary
+if "%input%" == "examine feeble man" goto examine_apothecary
+if "%input%" == "examine him" goto examine_apothecary
+if "%input%" == "look at man" goto examine_apothecary
+if "%input%" == "look at feeble man" goto examine_apothecary
+if "%input%" == "look at him" goto examine_apothecary
+
+if "%input%" == "talk" goto talkto_apothecary
+if "%input%" == "chat" goto talkto_apothecary
+if "%input%" == "speak" goto talkto_apothecary
+
+if "%input%" == "talk to man" goto talkto_apothecary
+if "%input%" == "talk to feeble man" goto talkto_apothecary
+if "%input%" == "talk to him" goto talkto_apothecary
+if "%input%" == "speak to man" goto talkto_apothecary
+if "%input%" == "speak to feeble man" goto talkto_apothecary
+if "%input%" == "speak to him" goto talkto_apothecary
+if "%input%" == "go to man" goto talkto_apothecary
+if "%input%" == "go to feeble man" goto talkto_apothecary
+if "%input%" == "go to him" goto talkto_apothecary
+
+if "%input%" == "apothecary" goto examine_apothecary
+if "%input%" == "feeble apothecary" goto examine_apothecary
+if "%input%" == "him" goto examine_apothecary
+if "%input%" == "examine apothecary" goto examine_apothecary
+if "%input%" == "examine feeble apothecary" goto examine_apothecary
+if "%input%" == "examine him" goto examine_apothecary
+if "%input%" == "look at apothecary" goto examine_apothecary
+if "%input%" == "look at feeble apothecary" goto examine_apothecary
+if "%input%" == "look at him" goto examine_apothecary
+
+if "%input%" == "talk to apothecary" goto talkto_apothecary
+if "%input%" == "talk to feeble apothecary" goto talkto_apothecary
+if "%input%" == "speak to apothecary" goto talkto_apothecary
+if "%input%" == "speak to feeble apothecary" goto talkto_apothecary
+if "%input%" == "speak to him" goto talkto_apothecary
+if "%input%" == "go to apothecary" goto talkto_apothecary
+if "%input%" == "go to feeble apothecary" goto talkto_apothecary
+if "%input%" == "go to him" goto talkto_apothecary
+)
+
+
+if "%input%" == "m" goto map
+if "%input%" == "map" goto map
+if "%input%" == "i" goto inventory
+if "%input%" == "inventory" goto inventory
+if "%input%" == "s" goto stats
+if "%input%" == "stats" goto stats
+if "%input%" == "l" goto look
+if "%input%" == "look" goto look
+if "%input%" == "look around" goto look
+if "%input%" == "h" goto help
+if "%input%" == "help" goto help
+
+
+goto inventoryCommands
+
+
+
+
+
+
+
+:tile_route3_caveentrance
 if "%location%" == "route3_2" (
+echo.
+echo    [You walk south until you reach the dark fetid cave entrance.]
+)
+if "%location%" == "route3_3" (
+echo.
+echo    [You walk north and exit the dark fetid cave.]
+)
+
+set location=route3_caveentrance
+echo.
+echo  ~ You are at the entrance to a dark fetid cave.
+echo      ^> To the north is a rocky field.
+echo      ^> To the south is the inside of the cave.
+echo.
+echo    [What do you do?]
+echo.
+set input=noInput
+set /p input=
+
+if "%input%" == "noInput" goto returnLocation
+
+if "%input%" == "" goto 
+
+if "%input%" == "m" goto map
+if "%input%" == "map" goto map
+if "%input%" == "i" goto inventory
+if "%input%" == "inventory" goto inventory
+if "%input%" == "s" goto stats
+if "%input%" == "stats" goto stats
+if "%input%" == "l" goto look
+if "%input%" == "look" goto look
+if "%input%" == "look around" goto look
+if "%input%" == "h" goto help
+if "%input%" == "help" goto help
+
+if "%route3_caveentrance_pickaxe%" == "present" (
+if "%input%" == "take axe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "axe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "look at axe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "examine axe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "take pickaxe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "pickaxe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "look at pickaxe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "examine pickaxe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "take pick axe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "pick axe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "look at pick axe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "examine pick axe" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "take pick" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "pick" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "look at pick" goto takeroute3_caveentrance_pickaxe
+if "%input%" == "examine pick" goto takeroute3_caveentrance_pickaxe
+)
+
+if "%input%" == "north" goto tile_route3_2
+if "%input%" == "go north" goto tile_route3_2
+if "%input%" == "rocky field" goto tile_route3_2
+if "%input%" == "field" goto tile_route3_2
+if "%input%" == "go to rocky field" goto tile_route3_2
+if "%input%" == "enter rocky field" goto tile_route3_2
+if "%input%" == "go to field" goto tile_route3_2
+if "%input%" == "enter field" goto tile_route3_2
+
+if "%input%" == "enter" goto tile_route3_3
+if "%input%" == "go in" goto tile_route3_3
+if "%input%" == "go inside" goto tile_route3_3
+if "%input%" == "south" goto tile_route3_3
+if "%input%" == "go south" goto tile_route3_3
+if "%input%" == "cave" goto tile_route3_3
+if "%input%" == "fetid cave" goto tile_route3_3
+if "%input%" == "dark cave" goto tile_route3_3
+if "%input%" == "dark fetid cave" goto tile_route3_3
+if "%input%" == "it" goto tile_route3_3
+if "%input%" == "enter cave" goto tile_route3_3
+if "%input%" == "enter fetid cave" goto tile_route3_3
+if "%input%" == "enter dark cave" goto tile_route3_3
+if "%input%" == "enter dark fetid cave" goto tile_route3_3
+if "%input%" == "enter it" goto tile_route3_3
+if "%input%" == "go in cave" goto tile_route3_3
+if "%input%" == "go in fetid cave" goto tile_route3_3
+if "%input%" == "go in dark cave" goto tile_route3_3
+if "%input%" == "go in dark fetid cave" goto tile_route3_3
+if "%input%" == "go in it" goto tile_route3_3
+if "%input%" == "go into cave" goto tile_route3_3
+if "%input%" == "go into fetid cave" goto tile_route3_3
+if "%input%" == "go into dark cave" goto tile_route3_3
+if "%input%" == "go into dark fetid cave" goto tile_route3_3
+if "%input%" == "go into it" goto tile_route3_3
+
+if "%input%" == "x cave" goto examine_darkfetidcave
+if "%input%" == "x fetid cave" goto examine_darkfetidcave
+if "%input%" == "x dark cave" goto examine_darkfetidcave
+if "%input%" == "x dark fetid cave" goto examine_darkfetidcave
+if "%input%" == "x it" goto examine_darkfetidcave
+if "%input%" == "look at cave" goto examine_darkfetidcave
+if "%input%" == "look atfetid cave" goto examine_darkfetidcave
+if "%input%" == "look atdark cave" goto examine_darkfetidcave
+if "%input%" == "look atdark fetid cave" goto examine_darkfetidcave
+if "%input%" == "look atit" goto examine_darkfetidcave
+if "%input%" == "examine cave" goto examine_darkfetidcave
+if "%input%" == "examine fetid cave" goto examine_darkfetidcave
+if "%input%" == "examine dark cave" goto examine_darkfetidcave
+if "%input%" == "examine dark fetid cave" goto examine_darkfetidcave
+if "%input%" == "examine it" goto examine_darkfetidcave
+if "%input%" == "look in cave" goto examine_darkfetidcave
+if "%input%" == "look in fetid cave" goto examine_darkfetidcave
+if "%input%" == "look in dark cave" goto examine_darkfetidcave
+if "%input%" == "look in dark fetid cave" goto examine_darkfetidcave
+if "%input%" == "look in it" goto examine_darkfetidcave
+if "%input%" == "look into cave" goto examine_darkfetidcave
+if "%input%" == "look into fetid cave" goto examine_darkfetidcave
+if "%input%" == "look into dark cave" goto examine_darkfetidcave
+if "%input%" == "look into  fetid cave" goto examine_darkfetidcave
+if "%input%" == "look into it" goto examine_darkfetidcave
+if "%input%" == "cave" goto examine_darkfetidcave
+if "%input%" == "fetid cave" goto examine_darkfetidcave
+if "%input%" == "dark cave" goto examine_darkfetidcave
+if "%input%" == "dark fetid cave" goto examine_darkfetidcave
+if "%input%" == "it" goto examine_darkfetidcave
+
+if "%input%" == "go into it" goto examine_darkfetidcave
+
+
+goto inventoryCommands
+
+:takeroute3_caveentrance_pickaxe
+echo.
+echo    [You take the pickaxe.]
+echo      ^> Not designed as a weapon, but not designed as a toy either.
+echo      ^> "i" to open inventory
+set /a items=%items% + 1
+set /a item_pickaxe=%item_pickaxe% + 1
+set route3_caveentrance_pickaxe=absent
+goto returnLocation
+
+
+:examine_darkfetidcave
+echo.
+echo    [You examine the dark fetid cave.]
+echo      ^> A hole in the bare rock face descends into the earth.
+echo      ^> A rank, bitter, organic odor emits from it.
+goto returnLocation
+
+
+:tile_route3_3
+if "%location%" == "route3_caveentrance" (
 echo.
 echo    [You walk south and enter the dark fetid cave.]
 )
@@ -6806,21 +7402,21 @@ if "%input%" == "noInput" goto returnLocation
 
 if "%input%" == "" goto 
 
-if "%input%" == "north" goto tile_route3_2
-if "%input%" == "go north" goto tile_route3_2
-if "%input%" == "light" goto tile_route3_2
-if "%input%" == "go to light" goto tile_route3_2
-if "%input%" == "go toward light" goto tile_route3_2
-if "%input%" == "leave" goto tile_route3_2
-if "%input%" == "exit" goto tile_route3_2
-if "%input%" == "leave cave" goto tile_route3_2
-if "%input%" == "exit cave" goto tile_route3_2
-if "%input%" == "leave fetid cave" goto tile_route3_2
-if "%input%" == "exit fetid cave" goto tile_route3_2
-if "%input%" == "leave dark fetid cave" goto tile_route3_2
-if "%input%" == "exit dark fetid cave" goto tile_route3_2
-if "%input%" == "leave dark cave" goto tile_route3_2
-if "%input%" == "exit dark cave" goto tile_route3_2
+if "%input%" == "north" goto tile_route3_caveentrance
+if "%input%" == "go north" goto tile_route3_caveentrance
+if "%input%" == "light" goto tile_route3_caveentrance
+if "%input%" == "go to light" goto tile_route3_caveentrance
+if "%input%" == "go toward light" goto tile_route3_caveentrance
+if "%input%" == "leave" goto tile_route3_caveentrance
+if "%input%" == "exit" goto tile_route3_caveentrance
+if "%input%" == "leave cave" goto tile_route3_caveentrance
+if "%input%" == "exit cave" goto tile_route3_caveentrance
+if "%input%" == "leave fetid cave" goto tile_route3_caveentrance
+if "%input%" == "exit fetid cave" goto tile_route3_caveentrance
+if "%input%" == "leave dark fetid cave" goto tile_route3_caveentrance
+if "%input%" == "exit dark fetid cave" goto tile_route3_caveentrance
+if "%input%" == "leave dark cave" goto tile_route3_caveentrance
+if "%input%" == "exit dark cave" goto tile_route3_caveentrance
 
 
 if "%input%" == "east" goto tile_route3_5
@@ -6870,7 +7466,6 @@ if "%input%" == "help" goto help
 
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -6920,7 +7515,6 @@ if "%input%" == "help" goto help
 
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -7003,8 +7597,8 @@ if "%input%" == "look at pick" goto takeroute3_5pickaxe
 if "%input%" == "examine pick" goto takeroute3_5pickaxe
 )
 
-if "%input%" == "west" goto tile_route3_7
-if "%input%" == "go west" goto tile_route3_7
+if "%input%" == "west" goto tile_route3_3
+if "%input%" == "go west" goto tile_route3_3
 if "%input%" == "east" goto tile_route3_6
 if "%input%" == "go east" goto tile_route3_6
 if "%input%" == "light" goto tile_route3_6
@@ -7035,7 +7629,6 @@ if "%input%" == "help" goto help
 
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -7048,6 +7641,8 @@ set /a items=%items% + 1
 set /a item_pickaxe=%item_pickaxe% + 1
 set route3_5_pickaxe=absent
 goto returnLocation
+
+
 
 
 
@@ -7126,7 +7721,6 @@ if "%input%" == "help" goto help
 
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -7223,8 +7817,6 @@ if "%input%" == "help" goto help
 
 
 goto inventoryCommands
-goto commandError
-
 
 
 
@@ -7332,7 +7924,6 @@ if "%input%" == "help" goto help
 
 
 goto inventoryCommands
-goto commandError
 
 
 
@@ -7409,7 +8000,6 @@ if "%input%" == "h" goto help
 if "%input%" == "help" goto help
 
 goto inventoryCommands
-goto commandError
 
 :examineorevein_route3_8
 echo.
